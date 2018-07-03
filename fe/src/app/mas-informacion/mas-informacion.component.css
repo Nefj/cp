@@ -1,0 +1,5 @@
+.cecap-4 { 
+    height: 750px; 
+    /* background: linear-gradient(-15deg, rgba(91,39,254, 0.6) 3%, rgba(194,101,221,0.6) 33%, transparent 65%), url("../../assets/cecap-4.jpg") no-repeat center;  */
+    background-size: cover !important; 
+}

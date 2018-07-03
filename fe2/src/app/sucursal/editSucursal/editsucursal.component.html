@@ -1,0 +1,52 @@
+<div class="content-wrapper">
+    <br>
+    <div class="">
+        <div class="box box-primary">
+
+            <div class="container ">
+                <div [hidden]="submitted">
+                    <h1>Editar Sucursal</h1>
+                    <br>
+                    <form (ngSubmit)="onSubmit()" #addEjecutivo="ngForm" class="jumbotron">
+                        <div class="form-group col-sm-8">
+                            <label for="name" class="control-label">Nombre de Sucursal</label>
+                            <input type="text" class="form-control" id="name" [(ngModel)]="office.name" name="name" #name="ngModel" required />
+                            <!--<div [hidden]="name?.valid || name?.pristine" class="text-alert">
+                            kjkn
+                        </div>-->
+                        </div>
+                        <div class="form-group col-sm-8">
+                            <label for="ubicacion" class=" control-label">Ubicación</label>
+                            <input type="text" class="form-control" id="ubicacion" [(ngModel)]="office.ubicacion" name="ubicacion" #ubicacion="ngModel"
+                                required>
+                        </div>
+                        <div class="form-group col-sm-8">
+                            <label for="ubicacion" class=" control-label">Telefonos</label>
+                            <input type="text" class="form-control" id="phones" [(ngModel)]="office.phones" name="phones" #phones="ngModel"
+                                required>
+                        </div>
+                        <div class="form-group col-sm-8">
+                            <label for="ubicacion" class=" control-label">Latitud</label>
+                            <input type="text" class="form-control" id="lat" [(ngModel)]="office.lat" name="lat" #lat="ngModel"
+                                required>
+                        </div>
+                        <div class="form-group col-sm-8">
+                            <label for="ubicacion" class=" control-label">Longitud</label>
+                            <input type="text" class="form-control" id="lng" [(ngModel)]="office.lng" name="lng" #lng="ngModel"
+                                required>
+                        </div>
+                        <div class="form-group col-sm-8">
+                            <label for="departament">Departamento</label>
+                            <input type="text" disabled class="form-control" id="department" [(ngModel)]="office.departament" name="department" #department="ngModel"
+                                required>
+                        </div>
+                        <div class="form-group col-sm-8" style="text-align:center ">
+                            <button type="submit" class="btn btn-success" [disabled]="!addEjecutivo.form.valid">Guardar</button>
+                            <button type="button" class="btn btn-danger" (click)="cancelar()">Cancelar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,38 @@
+<div class="content-wrapper">
+      <section class="content">
+            <div>
+                  <ol class="breadcrumb">
+                        <h1>Taller</h1>
+                        <li>
+                              <a class="btn btn-primary" [routerLink]="['/home/workshop/'+event?._id]">
+                                    <i class="fa fa-book"></i> Agregar Taller</a>
+                        </li>
+                  </ol>
+            </div>
+            <table class="table table-hover">
+                  <thead>
+                        <tr>
+                              <th>Nombre</th>
+                              <th>Descripcion</th>
+                              <th>Objetivo</th>
+                              <th colspan="3">Ajustes</th>
+                        </tr>
+                  </thead>
+                  <tbody>
+                        <tr *ngFor="let w of workshops">
+                              <td>{{ w.name }} </td>
+                              <td>{{ w.description }}</td>
+                              <td>{{ w.objective }}</td>
+                              <td>
+                                    <button class="btn btn-warning" (click)="edit(w._id)"> Editar</button>
+                              </td>
+                        </tr>
+                  </tbody>
+            </table>
+            <div class="" style="text-align: center">
+                  <button class="btn btn-primary" (click)="cancelar()">Volver</button>
+            </div>
+
+      </section>
+      <router-outlet></router-outlet>
+</div>

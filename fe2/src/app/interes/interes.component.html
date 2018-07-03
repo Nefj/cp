@@ -1,0 +1,61 @@
+<div class="content-wrapper">
+  <!-- inicio -->
+  <div class="content">
+    <div class="box box-primary">
+      <div class="container ">
+        <h1>Incio</h1>
+        <form (ngSubmit)="saveInicio()" #inicio="ngForm" class="">
+          <div class="form-group col-sm-8">
+            <label for="name" class="control-label">Imagen</label>
+            <input type="file" name="myImage" accept=".jpg, .jpeg" (change)="handleFileInput($event.target.files)" />
+          </div>
+          <div class="form-group col-sm-8">
+            <label for="name" class="control-label">Linea</label>
+            <!-- pattern="[a-zA-Z]{3,20}[ ]{0,1}[a-zA-Z]{0,20}[ ]{0,1}[a-zA-Z]{0,20}" -->
+            <input type="text" pattern="[a-zA-ZÑ-ñÁ-áÉ-éÍ-íÓ-óÚ-ú0-9]{3,20}[ ]{0,1}[a-zA-ZÑ-ñÁ-áÉ-éÍ-íÓ-óÚ-ú0-9]{0,20}[ ]{0,1}[a-zA-Z]{0,20}"
+              class="form-control" id="line1" [(ngModel)]="page.inicio.line" name="line1" #line1="ngModel" required />
+          </div>
+          <button type="submit" class="btn btn-success">Guardar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- list -->
+  <div class="content">
+    <div class="box box-primary">
+      <div class="container ">
+        <h1>Intereses</h1>
+        <div *ngFor="let list of page.list">
+          <form (ngSubmit)="saveInteres(list._id)" #inicio="ngForm" class="">
+            <div class="form-group col-sm-8">
+              <div>
+                <label for="name" class="control-label">Imagen</label>
+                <input type="file" name="myImage" accept=".jpg, .jpeg" (change)="handleFileInputInteres($event.target.files, list._id)" />
+              </div>
+              <div *ngFor="let key of list | objKey">
+                <label *ngIf="key != '_id' && key !='photo' && key !='block2' && key !='block3'" for="name" class="control-label"> {{key}}</label>
+                <input *ngIf="key != '_id' && key !='photo' && key !='block2' && key !='block3'" type="text" pattern="[a-zA-ZÑ-ñÁ-áÉ-éÍ-íÓ-óÚ-ú0-9]{3,20}[ ]{0,1}[a-zA-ZÑ-ñÁ-áÉ-éÍ-íÓ-óÚ-ú0-9]{0,20}[ ]{0,1}[a-zA-Z]{0,20}"
+                  class="form-control" id="{{list[key]}}" [(ngModel)]="list[key]" name="{{list[key]}}" #name="ngModel" required/>
+                <div *ngIf="key == 'block2' || key =='block3'">
+                  <label for="name" class="control-label"> {{key}}</label>
+                  <input type="text" pattern="[a-zA-ZÑ-ñÁ-áÉ-éÍ-íÓ-óÚ-ú0-9]{3,20}[ ]{0,1}[a-zA-ZÑ-ñÁ-áÉ-éÍ-íÓ-óÚ-ú0-9]{0,20}[ ]{0,1}[a-zA-Z]{0,20}"
+                    class="form-control" id="{{list[key].tittle}}" [(ngModel)]="list[key].tittle" name="{{list[key].tittle}}"
+                    #name="ngModel" required/>
+                  <!-- <div *ngFor"let p of list[key].photos">
+                    <label for="name" class="control-label">Imagen</label>
+                    <input type="file" name="myImage" accept=".jpg, .jpeg" (change)="handleFileInputInteres($event.target.files, list._id)" />
+                  </div> -->
+                </div>
+                <!-- <label *ngIf="key == 'block2' && key !='block3'" for="name" class="control-label"> {{key}}</label>
+                <input *ngIf="key == 'block2' && key !='block3'" type="text" pattern="[a-zA-ZÑ-ñÁ-áÉ-éÍ-íÓ-óÚ-ú0-9]{3,20}[ ]{0,1}[a-zA-ZÑ-ñÁ-áÉ-éÍ-íÓ-óÚ-ú0-9]{0,20}[ ]{0,1}[a-zA-Z]{0,20}"
+                  class="form-control" id="{{list[key]}}" [(ngModel)]="list[key]" name="{{list[key]}}" #name="ngModel" required/> -->
+              </div>
+              <hr>
+              <button type="submit" class="btn btn-success">Guardar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

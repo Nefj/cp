@@ -1,0 +1,30 @@
+<div id="init" class="inter" [ngStyle]="{'background': 'url('+ interes.photo +') no-repeat center'}">
+  <div class="centered">
+    <br>
+    <span style="font-size: 1em; font-weight:bold;"> {{interes.tittle}} </span>
+    <br>
+    <p style="max-width: 35em;"> {{interes.description}} </p>
+    <br>
+  </div>
+</div>
+
+<div class='bg1 padding1 center'>
+  <div class="padding3" style="max-width: 45em; margin: auto; text-align: justify;">{{interes.block}}</div>
+</div>
+
+<div class='bg2 padding1'>
+  <h2 class='sub-title'> {{interes.block2.tittle}} </h2>
+  <div class='main-objectives' style="padding-top: 3em; margin-bottom: 0em !important; max-width:none;">
+    <div class='objective' style='width: 250px; height:auto;' *ngFor="let photo of interes.block2.photos">
+      <img [src]=photo.photo />
+    </div>
+  </div>
+</div>
+<div class='bg2 padding1'>
+  <h2 class='sub-title'> {{interes.block3.tittle}} </h2>
+  <div class='main-objectives' style="padding-top: 3em; margin-bottom: 0em !important; max-width:none;">
+    <div class='objective' style='width: 250px; height:auto;' *ngFor="let photo of interes.block3.photos">
+      <img [src]=photo.photo />
+    </div>
+  </div>
+</div>

@@ -1,0 +1,7 @@
+span{
+    cursor: pointer;
+}
+.cecap-5 { 
+    background: linear-gradient(-15deg, rgba(26,35,126) 4%, rgb(27,90,248) 96.6%); 
+    background-size: cover; 
+}

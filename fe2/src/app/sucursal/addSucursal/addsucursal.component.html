@@ -1,0 +1,71 @@
+<div class="content-wrapper">
+    <br>
+    <div class="">
+        <div class="box box-primary">
+
+            <div class="container ">
+                <div [hidden]="submitted">
+                    <h1>Registrar Sucursal</h1>
+                    <br>
+                    <form (ngSubmit)="onSubmit()" #addEjecutivo="ngForm" class="jumbotron">
+                        <div class="form-group col-sm-8">
+                            <label for="name" class="control-label">Nombre de Sucursal</label>
+                            <input type="text" pattern="[a-zA-Z]{3,10}[ ]{0,1}[a-zA-Z]{0,10}" class="form-control" id="name" [(ngModel)]="office.name"
+                                name="name" #name="ngModel" required />
+                            <span *ngIf="!name.valid && name.touched" class="text-alert">
+                                *Nombre de Sucursal requerido.
+                            </span>
+                            <!--<div [hidden]="name?.valid || name?.pristine" class="text-alert">
+                            kjkn
+                        </div>-->
+                        </div>
+                        <div class="form-group col-sm-8">
+                            <label for="ubicacion" class=" control-label">Ubicación</label>
+                            <input type="text" pattern="[a-zA-Z0-9#]{4,20}([ ]{0,1}[a-zA-Z0-9#]{0,20}){0,2}" class="form-control" id="ubicacion" [(ngModel)]="office.ubicacion"
+                                name="ubicacion" #ubicacion="ngModel" required>
+                            <span *ngIf="!ubicacion.valid && ubicacion.touched" class="text-alert">
+                                *Ubicación de Sucursal invalido.
+                            </span>
+                            <!--<div [hidden]="ubicacion?.valid || ubicacion?.pristine" class="">
+                                Ubicacion requerida
+                            </div>-->
+                        </div>
+                        <div class="form-group col-sm-8">
+                            <label for="ubicacion" class=" control-label">Telefonos</label>
+                            <input type="text" class="form-control" id="phones" [(ngModel)]="office.phones" name="phones" #phones="ngModel" required>
+                        </div>
+                        <div class="form-group col-sm-8">
+                            <label for="ubicacion" class=" control-label">Latitud</label>
+                            <input type="text" class="form-control" id="lat" [(ngModel)]="office.lat" name="lat" #lat="ngModel" required>
+                        </div>
+                        <div class="form-group col-sm-8">
+                            <label for="ubicacion" class=" control-label">Longitud</label>
+                            <input type="text" class="form-control" id="lng" [(ngModel)]="office.lng" name="lng" #lng="ngModel" required>
+                        </div>
+                        <div class="form-group col-sm-8">
+                            <label for="departament">Departamento</label>
+                            <select class="form-control" id="departament" [(ngModel)]="office.departament" name="departament" #departament="ngModel"
+                                required>
+                                <option value="Cochabamba">Cochabamba</option>
+                                <option value="La Paz">La Paz</option>
+                                <option value="Santa Cruz">Santa Cruz</option>
+                            </select>
+                            <!-- <input type="text" class="form-control" id="departament" required
+                                [(ngModel)]="office.departament" name="departament" #departament="ngModel" > -->
+                            <span *ngIf="!departament.valid && departament.touched" class="text-alert">
+                                *Departamento de Sucursal requerido.
+                            </span>
+                            <!--<div [hidden]="departament?.valid || departament?.pristine" class="">
+                               *Departamento requeridos
+                            </div>-->
+                        </div>
+                        <div class="form-group col-sm-8" style="text-align:center ">
+                            <button type="submit" class="btn btn-success" [disabled]="!addEjecutivo.form.valid">Guardar</button>
+                            <button type="button" class="btn btn-danger" (click)="cancelar()">Cancelar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

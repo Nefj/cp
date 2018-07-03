@@ -1,0 +1,43 @@
+<div id="init" class="program" [ngStyle]="{'background': 'url('+ consult.photo +') no-repeat center'}">
+  <div class="centered">
+    <br>
+    <span style="font-size: 0.5em; font-weight:bold;"> {{consult.line1}} </span>
+    <br>
+    <span style="font-size: 1em; font-weight:bold;"> {{consult.name}} </span>
+    <br>
+  </div>
+</div>
+
+<div class='bg1 padding1 center'>
+  <h2 class='sub-title'>Objetivo</h2>
+  <div class="padding3" style="max-width: 45em; margin: auto; text-align: justify;"> {{consult.objective}} </div>
+</div>
+
+<div class="cecap-3 padding1" width="4em;">
+  <h2 class='sub-title' style="color: white;">Alcance</h2>
+  <div class='main-objectives' style="padding-top: 3em; margin-bottom: 0em !important; max-width:none;">
+    <div class='objective' style='width: 360px; height:auto;' *ngFor="let scope of consult.scopes">
+      <p style="text-align:center;"> {{scope.name}} </p>
+    </div>
+    <!-- <div class='objective' style='width: 360px; height:auto;'>
+      <p style="text-align:center;">Identificación de valores compartidos.
+      </p>
+    </div>
+    <div class='objective' style='width: 360px; height:auto;'>
+      <p style="text-align:center;">Análisis y mapeo de relaciones con grupos de interés.
+      </p>
+    </div>
+    <div class='objective' style='width: 360px; height:auto;'>
+      <p style="text-align:center;">Capacitación y sensibilización al personal clave de la organización sobre aspectos de planificación estratégica con una visión compartida.
+      </p>
+    </div>
+    <div class='objective' style='width: 360px; height:auto;'>
+      <p style="text-align:center;">Elaboración del Plan Estratégico Empresarial con visión compartida.
+      </p>
+    </div>
+    <div class='objective' style='width: 360px; height:auto;'>
+      <p style="text-align:center;">Cuadro de Mando (Balanced Scorecard)
+      </p>
+    </div> -->
+  </div>
+</div>

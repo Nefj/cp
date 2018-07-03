@@ -1,0 +1,34 @@
+.facilitator {
+    /* background: url("../../../assets/facilitatora-cecap-36.jpg") no-repeat center;  */
+    overflow: hidden;
+    background-size: cover !important;
+    color: white;
+}
+.facilitator > div{
+    display: flex;
+}
+.facilitator > div > div {
+    left: 0;
+    width: 100%;
+    padding: 4em 0.3em 4em 3.3em;
+    text-align: left;
+    background-attachment: fixed;
+    font-size: 3em;
+}
+img{
+    border-radius: 50%;
+}
+
+@media screen and (max-width: 850px) {
+    .facilitator >div{
+        display: table;
+        margin: auto;
+    }
+    .facilitator > div >div{
+        padding: 1.5em;
+        width: auto;
+    }
+    img{
+        width: 14em;
+    }
+}

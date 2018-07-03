@@ -1,0 +1,17 @@
+<div class='bg2 padding3' id="init">
+      <h2 class='sub-title'> {{home.home.events.line1}} </h2>
+      <h4 style="text-align: center; max-width: 30em; margin: auto; font-weight: 200; padding: 1em;"> {{home.home.events.line2}} </h4>
+      <div class='main-objectives' style="padding-top: 3em; margin-bottom: 0em !important; max-width:none;">
+            <div class='objective card' style='width: 350px; height:auto; padding: 0% !important;' *ngFor="let event of events">
+                  <img [src]=event.photo style="width: 100%; border-radius: 5px 5px 0 0;">
+                  <div class="padding1">
+                        <p style='margin:auto; text-align: left; color:#1c3844; font-size: 1.2em; font-weight: 700; font-family: Raleway;'> {{event.name}} </p>
+                        <p style='margin:auto; text-align: left; color:#1c3844; font-size: 1em; font-weight: 700; font-family: Raleway;'> Fecha Inicio: {{event.date_start}} </p>
+                        <div class="right padding1">
+                              <a routerLink="/evento/{{event._id}}" style="text-decoration:none;font-size: 0.8em; color: #6120ea;font-weight:700;">MAS INFORMACION</a>
+                        </div>
+                  </div>
+            </div>
+      </div>
+</div>
+<!-- <app-mas-informacion></app-mas-informacion> -->

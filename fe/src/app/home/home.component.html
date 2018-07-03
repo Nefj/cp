@@ -1,0 +1,242 @@
+<div id="myDIV">
+  <!-- inicio -->
+  <div id='init' class="module" [ngStyle]="{'background': 'url('+ home.home.inicio.photo +') no-repeat center'}">
+    <div class="centered">
+      <span class="mainTittle">{{home.home.inicio.line1}}</span>
+      <br>
+      <span class="mainTittle">{{home.home.inicio.line2}}</span>
+      <br>
+      <span style="line-height: 0em;">{{home.home.inicio.line3}}</span>
+      <br>
+      <button class="btn2 primary mat-raised-button" (click)="info()" style=" color: white;">Contactanos</button>
+    </div>
+  </div>
+  <!-- servicios -->
+  <div class='bg1 padding1'>
+    <h2 class='sub-title'>{{home.home.services.tittle}}</h2>
+    <div class='main-objectives' style="padding-top: 3em; margin-bottom: 0em !important; max-width:none;">
+      <div class='objective' style='width: 250px; height:auto;' *ngFor="let service of home.home.services.services">
+        <img [src]=service.photo />
+        <p class="tittle2" (click)="send(service.number);">{{service.tittle}}</p>
+        <p style="text-align:center;">{{service.description}}</p>
+      </div>
+    </div>
+  </div>
+  <!-- lo nuestro -->
+  <div id="nuestro" class="module1" [ngStyle]="{'background': 'linear-gradient(-15deg, rgba(0,202,157, 0.6) 3%, rgba(251,255,193,0.6) 33%, transparent 65%), url('+ home.home.our.photo +') no-repeat center'}">
+    <div class="padding1">
+      {{home.home.our.line1}}
+      <br>
+      <span>{{home.home.our.line2}}</span>
+      <br>
+      <button class="btn1 secundary mat-raised-button" (click)="read(1);">Leer mas</button>
+    </div>
+  </div>
+  <div id="uno" class='bg1 padding1' style="display: none;">
+    <div class='main-objectives' style="padding-top: 3em; margin-bottom: 0em !important; max-width:none;">
+      <div class='objective' style='width: 400px; height:auto;' *ngFor="let dif of home.home.our.list">
+        <img [src]=dif.photo />
+        <p style='margin:auto; text-align: center; color:#1c3844; font-size: 1.2em; font-weight: 700; font-family: Raleway;'>{{dif.tittle}}</p>
+        <p style="text-align:justify;">{{dif.description}}</p>
+      </div>
+    </div>
+    <a href="#nuestro" style="text-decoration: none;">
+      <button class="close" (click)="hide(1);">X</button>
+    </a>
+  </div>
+  <!-- eventos -->
+  <div *ngIf="show" class="silderContainer">
+    <slideshow [height]="height" [autoPlay]="true" [lazyLoad]="imageSources?.length > 1" [showDots]="true" [showCaptions]="true"
+      [imageUrls]="imageUrlArray" [stopAutoPlayOnSlide]="false"></slideshow>
+  </div>
+  <div *ngIf="!show" class="module2" [ngStyle]="{'background': 'linear-gradient(-15deg, rgba(0,202,157, 0.6) 3%, rgba(251,255,193,0.6) 33%, transparent 65%), url('+ home.home.events.photo +') no-repeat center'}">
+    <div class="padding1">
+      {{home.home.events.line1}}
+      <br>
+      <span>{{home.home.events.line1}}</span>
+      <br>
+      <!-- <button class="btn1 secundary mat-raised-button" onclick="read(2);">Leer mas</button> -->
+    </div>
+  </div>
+  <!-- team -->
+
+  <div class="cecap-3 padding1" width="4em;">
+    <h2 class='sub-title' style="color: white;"> {{home.home.team.tittle}} </h2>
+    <div class='main-objectives' style="padding-top: 3em; margin-bottom: 0em !important; max-width:none;">
+      <div class='objective' style='width: 250px; height:auto;' *ngFor="let member of home.home.team.member">
+        <img class="img" [src]=member.photo />
+        <p style='margin:auto; text-align: center; font-size: 1.2em; font-weight: 700; font-family: Raleway;'>{{member.name}}</p>
+        <p style="text-align:center;"> {{member.charge}} </p>
+        <a [href]=member.social[0]>
+          <i class="fa fa-facebook" style="color:white"></i>
+        </a>
+        <a [href]=member.social[1]>
+          <i class="fa fa-linkedin" style="color:white"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+  <!-- fotos -->
+  <div class='bg2 padding1'>
+    <h2 class='sub-title'> {{home.home.galery.tittle}} </h2>
+    <div class='main-objectives' style="padding-top: 3em; margin-bottom: 0em !important; max-width:none;">
+      <div class='objective' style='width: 250px; height:auto;' *ngFor="let photo of home.home.galery.photos">
+        <img [src]=photo.photo />
+      </div>
+    </div>
+  </div>
+  <!-- clientes -->
+  <div class='bg1 padding1 center'>
+    <h2 class='sub-title'> {{home.home.clients.tittle}} </h2>
+    <div class="padding1">
+      {{home.home.clients.line}}
+    </div>
+    <div class='main-objectives' style="padding-top: 3em; margin-bottom: 0em !important; max-width:none;">
+      <div class='objective' style='width: 120px; height:auto;' *ngFor="let list of home.home.clients.list">
+        <img [src]=list.photo />
+      </div>
+    </div>
+  </div>
+</div>
+<!-- <div id="dos" class='bg1 padding1' style="display: none;">
+    <div class='main-objectives' style="padding-top: 3em; margin-bottom: 0em !important; max-width:none;">
+      <div class='objective card' style='width: 350px; height:auto;'>
+        <p style='margin:auto; text-align: left; color:#1c3844;font-size: 0.8em; font-weight: 700; font-family: Raleway;'>Gestion 2018</p>
+        <p style='margin:auto; text-align: left; color:#1c3844; font-size: 1.2em; font-weight: 700; font-family: Raleway;'>Santa Cruz</p>
+        <div style="text-align: left;">
+          <span style='margin:auto; text-align: left; color:#1c3844;font-size: 0.8em; font-weight: 700; font-family: Raleway;'>PROGRAMA:</span>
+          <span style='margin:auto; text-align: left; color:#1c3844;font-size: 0.8em; font-weight: 400; font-family: Raleway;'>Comercio Exterior</span>
+          <br>
+          <span style='margin:auto; text-align: left; color:#1c3844;font-size: 0.8em; font-weight: 700; font-family: Raleway;'>Inicio:</span>
+          <span style='margin:auto; text-align: left; color:#1c3844;font-size: 0.8em; font-weight: 400; font-family: Raleway;'>25 de Junio</span>
+          <br>
+          <span style='margin:auto; text-align: left; color:#1c3844;font-size: 0.8em; font-weight: 700; font-family: Raleway;'>Horario:</span>
+          <span style='margin:auto; text-align: left; color:#1c3844;font-size: 0.8em; font-weight: 400; font-family: Raleway;'>19:00 a 22:00</span>
+          <br>
+          <span style='margin:auto; text-align: left; color:#1c3844;font-size: 0.8em; font-weight: 700; font-family: Raleway;'>Duracion:</span>
+          <span style='margin:auto; text-align: left; color:#1c3844;font-size: 0.8em; font-weight: 400; font-family: Raleway;'>8 semanas</span>
+          <br>
+          <a href="#" style="font-size: 0.8em; color: dodgerblue;">Mas Informacion</a>
+          <br>
+          <br>
+          <span style='margin:auto; text-align: left; color:#1c3844;font-size: 0.8em; font-weight: 700; font-family: Raleway;'>PROGRAMA:</span>
+          <span style='margin:auto; text-align: left; color:#1c3844;font-size: 0.8em; font-weight: 400; font-family: Raleway;'>Proyectos</span>
+          <br>
+          <span style='margin:auto; text-align: left; color:#1c3844;font-size: 0.8em; font-weight: 700; font-family: Raleway;'>Inicio:</span>
+          <span style='margin:auto; text-align: left; color:#1c3844;font-size: 0.8em; font-weight: 400; font-family: Raleway;'>25 de Julio</span>
+          <br>
+          <span style='margin:auto; text-align: left; color:#1c3844;font-size: 0.8em; font-weight: 700; font-family: Raleway;'>Horario:</span>
+          <span style='margin:auto; text-align: left; color:#1c3844;font-size: 0.8em; font-weight: 400; font-family: Raleway;'>19:00 a 22:00</span>
+          <br>
+          <span style='margin:auto; text-align: left; color:#1c3844;font-size: 0.8em; font-weight: 700; font-family: Raleway;'>Duracion:</span>
+          <span style='margin:auto; text-align: left; color:#1c3844;font-size: 0.8em; font-weight: 400; font-family: Raleway;'>8 semanas</span>
+          <br>
+          <a href="#" style="font-size: 0.8em; color: dodgerblue;">Mas Informacion</a>
+        </div>
+      </div>
+      <div class='objective card' style='width: 350px; height:auto;'>
+        <p style='margin:auto; text-align: left; color:#1c3844;font-size: 0.8em; font-weight: 700; font-family: Raleway;'>Gestion 2018</p>
+        <p style='margin:auto; text-align: left; color:#1c3844; font-size: 1.2em; font-weight: 700; font-family: Raleway;'>Cochabamba</p>
+        <div style="text-align: left;">
+          <span style='margin:auto; text-align: left; color:#1c3844;font-size: 0.8em; font-weight: 700; font-family: Raleway;'>PROGRAMA:</span>
+          <span style='margin:auto; text-align: left; color:#1c3844;font-size: 0.8em; font-weight: 400; font-family: Raleway;'>Comercio Exterior</span>
+          <br>
+          <span style='margin:auto; text-align: left; color:#1c3844;font-size: 0.8em; font-weight: 700; font-family: Raleway;'>Inicio:</span>
+          <span style='margin:auto; text-align: left; color:#1c3844;font-size: 0.8em; font-weight: 400; font-family: Raleway;'>25 de Junio</span>
+          <br>
+          <span style='margin:auto; text-align: left; color:#1c3844;font-size: 0.8em; font-weight: 700; font-family: Raleway;'>Horario:</span>
+          <span style='margin:auto; text-align: left; color:#1c3844;font-size: 0.8em; font-weight: 400; font-family: Raleway;'>19:00 a 22:00</span>
+          <br>
+          <span style='margin:auto; text-align: left; color:#1c3844;font-size: 0.8em; font-weight: 700; font-family: Raleway;'>Duracion:</span>
+          <span style='margin:auto; text-align: left; color:#1c3844;font-size: 0.8em; font-weight: 400; font-family: Raleway;'>8 semanas</span>
+          <br>
+          <a href="#" style="font-size: 0.8em; color: dodgerblue;">Mas Informacion</a>
+          <br>
+          <br>
+          <span style='margin:auto; text-align: left; color:#1c3844;font-size: 0.8em; font-weight: 700; font-family: Raleway;'>PROGRAMA:</span>
+          <span style='margin:auto; text-align: left; color:#1c3844;font-size: 0.8em; font-weight: 400; font-family: Raleway;'>Proyectos</span>
+          <br>
+          <span style='margin:auto; text-align: left; color:#1c3844;font-size: 0.8em; font-weight: 700; font-family: Raleway;'>Inicio:</span>
+          <span style='margin:auto; text-align: left; color:#1c3844;font-size: 0.8em; font-weight: 400; font-family: Raleway;'>25 de Julio</span>
+          <br>
+          <span style='margin:auto; text-align: left; color:#1c3844;font-size: 0.8em; font-weight: 700; font-family: Raleway;'>Horario:</span>
+          <span style='margin:auto; text-align: left; color:#1c3844;font-size: 0.8em; font-weight: 400; font-family: Raleway;'>19:00 a 22:00</span>
+          <br>
+          <span style='margin:auto; text-align: left; color:#1c3844;font-size: 0.8em; font-weight: 700; font-family: Raleway;'>Duracion:</span>
+          <span style='margin:auto; text-align: left; color:#1c3844;font-size: 0.8em; font-weight: 400; font-family: Raleway;'>8 semanas</span>
+          <br>
+          <a href="#" style="font-size: 0.8em; color: dodgerblue;">Mas Informacion</a>
+        </div>
+      </div>
+      <div class='objective card' style='width: 350px; height:auto;'>
+        <p style='margin:auto; text-align: left; color:#1c3844;font-size: 0.8em; font-weight: 700; font-family: Raleway;'>Gestion 2018</p>
+        <p style='margin:auto; text-align: left; color:#1c3844; font-size: 1.2em; font-weight: 700; font-family: Raleway;'>La Paz</p>
+        <div style="text-align: left;">
+          <span style='margin:auto; text-align: left; color:#1c3844;font-size: 0.8em; font-weight: 700; font-family: Raleway;'>PROGRAMA:</span>
+          <span style='margin:auto; text-align: left; color:#1c3844;font-size: 0.8em; font-weight: 400; font-family: Raleway;'>Comercio Exterior</span>
+          <br>
+          <span style='margin:auto; text-align: left; color:#1c3844;font-size: 0.8em; font-weight: 700; font-family: Raleway;'>Inicio:</span>
+          <span style='margin:auto; text-align: left; color:#1c3844;font-size: 0.8em; font-weight: 400; font-family: Raleway;'>25 de Junio</span>
+          <br>
+          <span style='margin:auto; text-align: left; color:#1c3844;font-size: 0.8em; font-weight: 700; font-family: Raleway;'>Horario:</span>
+          <span style='margin:auto; text-align: left; color:#1c3844;font-size: 0.8em; font-weight: 400; font-family: Raleway;'>19:00 a 22:00</span>
+          <br>
+          <span style='margin:auto; text-align: left; color:#1c3844;font-size: 0.8em; font-weight: 700; font-family: Raleway;'>Duracion:</span>
+          <span style='margin:auto; text-align: left; color:#1c3844;font-size: 0.8em; font-weight: 400; font-family: Raleway;'>8 semanas</span>
+          <br>
+          <a href="#" style="font-size: 0.8em; color: dodgerblue;">Mas Informacion</a>
+          <br>
+          <br>
+          <span style='margin:auto; text-align: left; color:#1c3844;font-size: 0.8em; font-weight: 700; font-family: Raleway;'>PROGRAMA:</span>
+          <span style='margin:auto; text-align: left; color:#1c3844;font-size: 0.8em; font-weight: 400; font-family: Raleway;'>Proyectos</span>
+          <br>
+          <span style='margin:auto; text-align: left; color:#1c3844;font-size: 0.8em; font-weight: 700; font-family: Raleway;'>Inicio:</span>
+          <span style='margin:auto; text-align: left; color:#1c3844;font-size: 0.8em; font-weight: 400; font-family: Raleway;'>25 de Julio</span>
+          <br>
+          <span style='margin:auto; text-align: left; color:#1c3844;font-size: 0.8em; font-weight: 700; font-family: Raleway;'>Horario:</span>
+          <span style='margin:auto; text-align: left; color:#1c3844;font-size: 0.8em; font-weight: 400; font-family: Raleway;'>19:00 a 22:00</span>
+          <br>
+          <span style='margin:auto; text-align: left; color:#1c3844;font-size: 0.8em; font-weight: 700; font-family: Raleway;'>Duracion:</span>
+          <span style='margin:auto; text-align: left; color:#1c3844;font-size: 0.8em; font-weight: 400; font-family: Raleway;'>8 semanas</span>
+          <br>
+          <a href="#" style="font-size: 0.8em; color: dodgerblue;">Mas Informacion</a>
+        </div>
+      </div>
+      <div class='objective card' style='width: 350px; height:auto;'>
+        <p style='margin:auto; text-align: left; color:#1c3844;font-size: 0.8em; font-weight: 700; font-family: Raleway;'>Gestion 2018</p>
+        <p style='margin:auto; text-align: left; color:#1c3844; font-size: 1.2em; font-weight: 700; font-family: Raleway;'>Sucre</p>
+        <div style="text-align: left;">
+          <span style='margin:auto; text-align: left; color:#1c3844;font-size: 0.8em; font-weight: 700; font-family: Raleway;'>PROGRAMA:</span>
+          <span style='margin:auto; text-align: left; color:#1c3844;font-size: 0.8em; font-weight: 400; font-family: Raleway;'>Comercio Exterior</span>
+          <br>
+          <span style='margin:auto; text-align: left; color:#1c3844;font-size: 0.8em; font-weight: 700; font-family: Raleway;'>Inicio:</span>
+          <span style='margin:auto; text-align: left; color:#1c3844;font-size: 0.8em; font-weight: 400; font-family: Raleway;'>25 de Junio</span>
+          <br>
+          <span style='margin:auto; text-align: left; color:#1c3844;font-size: 0.8em; font-weight: 700; font-family: Raleway;'>Horario:</span>
+          <span style='margin:auto; text-align: left; color:#1c3844;font-size: 0.8em; font-weight: 400; font-family: Raleway;'>19:00 a 22:00</span>
+          <br>
+          <span style='margin:auto; text-align: left; color:#1c3844;font-size: 0.8em; font-weight: 700; font-family: Raleway;'>Duracion:</span>
+          <span style='margin:auto; text-align: left; color:#1c3844;font-size: 0.8em; font-weight: 400; font-family: Raleway;'>8 semanas</span>
+          <br>
+          <a href="#" style="font-size: 0.8em; color: dodgerblue;">Mas Informacion</a>
+          <br>
+          <br>
+          <span style='margin:auto; text-align: left; color:#1c3844;font-size: 0.8em; font-weight: 700; font-family: Raleway;'>PROGRAMA:</span>
+          <span style='margin:auto; text-align: left; color:#1c3844;font-size: 0.8em; font-weight: 400; font-family: Raleway;'>Proyectos</span>
+          <br>
+          <span style='margin:auto; text-align: left; color:#1c3844;font-size: 0.8em; font-weight: 700; font-family: Raleway;'>Inicio:</span>
+          <span style='margin:auto; text-align: left; color:#1c3844;font-size: 0.8em; font-weight: 400; font-family: Raleway;'>25 de Julio</span>
+          <br>
+          <span style='margin:auto; text-align: left; color:#1c3844;font-size: 0.8em; font-weight: 700; font-family: Raleway;'>Horario:</span>
+          <span style='margin:auto; text-align: left; color:#1c3844;font-size: 0.8em; font-weight: 400; font-family: Raleway;'>19:00 a 22:00</span>
+          <br>
+          <span style='margin:auto; text-align: left; color:#1c3844;font-size: 0.8em; font-weight: 700; font-family: Raleway;'>Duracion:</span>
+          <span style='margin:auto; text-align: left; color:#1c3844;font-size: 0.8em; font-weight: 400; font-family: Raleway;'>8 semanas</span>
+          <br>
+          <a href="#" style="font-size: 0.8em; color: dodgerblue;">Mas Informacion</a>
+        </div>
+      </div>
+    </div>
+
+    <button class="close" onclick="hide(2);">X</button>
+  </div> -->

@@ -1,0 +1,19 @@
+<div id="init" class="module4" [ngStyle]="{'background': 'url('+ home.interes.inicio.photo +') no-repeat center'}">
+    <div class="centered">
+        <span style="font-size: 1em; font-weight:bold;">{{home.interes.inicio.line}}</span>
+    </div>
+</div>
+
+<div class='bg2 padding3'>
+    <div class='main-objectives' style="padding-top: 3em; margin-bottom: 0em !important; max-width:none;">
+        <div class='objective card' style='width: 350px; height:auto; padding: 0% !important;' *ngFor="let list of home.interes.list">
+            <img [src]=list.photo style="width: 100%; border-radius: 5px 5px 0 0;">
+            <div class="padding1">
+                <p style='margin:auto; text-align: left; color:#1c3844; font-size: 1.2em; font-weight: 700; font-family: Raleway;'>{{list.tittle}} </p>
+                <div class="right padding1">
+                    <a routerLink="/inter/{{list._id}}" style="text-decoration:none;font-size: 0.8em; color: #6120ea;font-weight:700;"> {{list.description}} </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

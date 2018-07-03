@@ -1,0 +1,57 @@
+<div id="init" class="event" [ngStyle]="{'background': 'url('+ event.photo +') no-repeat center'}">
+  <div class="centered">
+    <span style="font-size: 1em; font-weight:bold;"> {{event.line2}} </span>
+    <br>
+    <span style="font-size: 0.5em; font-weight:bold;"> {{event.line1}} </span>
+    <br>
+    <span style="font-size: 1em; font-weight:bold;"> {{event.name}} </span>
+    <br>
+    <p style="max-width: 35em;"> {{event.description}} </p>
+  </div>
+</div>
+
+<div class='bg1 padding1 center'>
+  <h2 class='sub-title'>Objetivo</h2>
+  <div class="padding3" style="max-width: 45em; margin: auto; text-align: justify;"> {{event.objective}}
+    <p>Mayor informacion del Programa pinche
+      <a routerLink="/programa/{{event.program_id}}">aqui</a>
+    </p>
+  </div>
+</div>
+
+<div class="cecap-3 padding1" width="4em;">
+  <h2 class='sub-title' style="color: white;"> Facilitadores </h2>
+  <div class='main-objectives' style="padding-top: 3em; margin-bottom: 0em !important; max-width:none;">
+    <div class='objective' style='width: 250px; height:auto;' *ngFor="let facilitator of event.facilitators">
+      <img class="img" [src]=facilitator.photo />
+       <p style='margin:auto; text-align: center; font-size: 1.2em; font-weight: 700; font-family: Raleway;'><a routerLink="/facilitador/{{facilitator._id}}">{{facilitator.name}}</a></p>
+      <p style="text-align:center;"> {{facilitator.job}} </p>
+     <a [href]=facilitator.social[0]>
+        <i class="fa fa-facebook" style="color:white"></i>
+      </a>
+      <a [href]=facilitator.social[1]>
+        <i class="fa fa-linkedin" style="color:white"></i>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- <div class="cecap-3 padding1" width="4em;">
+  <h2 class='sub-title' style="color: white;">Contenido</h2>
+  <div class='main-objectives' style="padding-top: 3em; margin-bottom: 0em !important; max-width:none;">
+    <div class='objective' style='width: 360px; height:auto;' *ngFor="let module of event.modules">
+      <p style='margin:auto; text-align: center; font-size: 1.2em; font-weight: 700; font-family: Raleway;'> {{module.name}} </p>
+      <p style="text-align:center;"> {{module.description}} </p>
+    </div>
+  </div>
+</div> -->
+
+<div class='bg1 padding1'>
+  <h2 class='sub-title padding1'>Beneficios</h2>
+  <div class='main-objectives' style="padding-top: 3em; margin-bottom: 0em !important; max-width:none;">
+    <div class='objective' style='width: 250px; height:auto;' *ngFor="let ben of event.benefit">
+      <img [src]=ben.photo/>
+      <p style='margin:auto; text-align: center; color:#1c3844; font-size: 1.2em; font-weight: 700; font-family: Raleway;'> {{ben.name}} </p>
+    </div>
+  </div>
+</div>

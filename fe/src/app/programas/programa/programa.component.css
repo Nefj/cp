@@ -1,0 +1,24 @@
+/* .program {
+    overflow: hidden;
+    background-size: cover !important;
+    color: white;
+}
+.program > div {
+    left: 0;
+    width: 100%;
+    padding: 5em 0.3em 4em 3.3em;
+    text-align: left;
+    background-attachment: fixed;
+    font-size: 3em;
+}
+
+@media screen and (max-width: 450px) {
+    .program > div {
+        padding: 3em 0.3em 3em 1.5em;
+    }
+}
+@media screen and (min-width: 451px)and (max-width: 632px) {
+    .program > div {
+        max-width: 9em;
+    }
+} */

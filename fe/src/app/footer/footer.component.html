@@ -1,0 +1,55 @@
+<div class="container cecap-5 center" style="color: white;" width="4em;">
+  <div class='main-objectives' style="padding-top: 3em; margin-bottom: 0em !important; max-width:83em;">
+    <div class='objective' style='width: 250px; height:auto; padding: 0;'>
+      <img style="width: 250px;" src='assets/logo.png' />
+    </div>
+    <div class='objective' style='width: 170px; height:auto; padding: 1em 0;'>
+      <span routerLink='/'>INICIO</span>
+    </div>
+    <div class='objective' style='width: 170px; height:auto; padding: 1em 0;'>
+      <span routerLink='/somos'>QUIENES SOMOS</span>
+    </div>
+    <div class='objective' style='width: 170px; height:auto; padding: 1em 0;'>
+      <span routerLink="/programas">PROGRAMAS</span>
+      <div class="fotter">
+        <span *ngFor="let program of programs" routerLink="/programa/{{program._id}}">
+          {{program.name}}
+        </span>
+      </div>
+    </div>
+    <div class='objective' style='width: 170px; height:auto; padding: 1em 0;'>
+      <span routerLink="/programas">TALLERES</span>
+      <div class="fotter">
+        <span *ngFor="let workshop of workshops" routerLink="/taller/{{workshop._id}}">
+          {{workshop.name}}
+        </span>
+      </div>
+    </div>
+    <div class='objective' style='width: 170px; height:auto; padding: 1em 0;'>
+      <span routerLink="/programas">CONSULTORIAS</span>
+      <div class="fotter">
+        <span *ngFor="let consult of consults" routerLink="/consultoria/{{consult._id}}">
+          {{consult.name}}
+        </span>
+      </div>
+    </div>
+    <div class='objective' style='width: 170px; height:auto; padding: 1em 0;'>
+      <span routerLink="/programas">DE MAXIMO INTERES</span>
+      <div class="fotter">
+        <span *ngFor="let interes of home.interes.list" routerLink="/inter/{{interes._id}}" style="display: table;">
+          {{interes.tittle}}
+        </span>
+      </div>
+    </div>
+    <div class='objective' style='width: 170px; height:auto; padding: 1em 0;'>
+      <span routerLink='/contactanos'>CONTACTANOS</span>
+    </div>
+  </div>
+  <hr style="width: 50%">
+  <div class="copyright padding1">
+    &#169; CECAP Consulting 2018 - Todos los derechos reservados
+    <a href="https://www.facebook.com/entrenamientodeconsultores.cecap/">
+      <i class="fa fa-facebook padding1" style="color:white;"></i>
+    </a>
+  </div>
+</div>

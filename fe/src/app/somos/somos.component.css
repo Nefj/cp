@@ -1,0 +1,15 @@
+
+.module3 {
+    /* background: url("../../assets/somos.jpg") no-repeat center;  */
+    overflow: hidden;
+    background-size: cover !important;
+    color: white;
+}
+.module3 > div {
+    left: 0;
+    width: 100%;
+    padding: 5em 0em 4em 0em;
+    text-align: center;
+    background-attachment: fixed;
+    font-size: 3em;
+}

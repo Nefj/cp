@@ -1,0 +1,182 @@
+<div class="content-wrapper">
+  <!-- inicio -->
+  <div class="content">
+    <div class="box box-primary">
+      <div class="container ">
+        <h1>Incio</h1>
+        <form (ngSubmit)="saveInicio()" #inicio="ngForm" class="">
+          <div class="form-group col-sm-8">
+            <label for="name" class="control-label">Imagen</label>
+            <input type="file" name="myImage" accept=".jpg, .jpeg" (change)="handleFileInput($event.target.files)" />
+          </div>
+          <div class="form-group col-sm-8">
+            <label for="name" class="control-label">Linea 1</label>
+            <!-- pattern="[a-zA-Z]{3,20}[ ]{0,1}[a-zA-Z]{0,20}[ ]{0,1}[a-zA-Z]{0,20}" -->
+            <input type="text" pattern="[a-zA-ZÑ-ñÁ-áÉ-éÍ-íÓ-óÚ-ú0-9]{3,20}[ ]{0,1}[a-zA-ZÑ-ñÁ-áÉ-éÍ-íÓ-óÚ-ú0-9]{0,20}[ ]{0,1}[a-zA-Z]{0,20}"
+              class="form-control" id="line1" [(ngModel)]="page.inicio.line1" name="line1" #line1="ngModel" required />
+          </div>
+          <div class="form-group col-sm-8">
+            <label for="name" class="control-label">Linea 2</label>
+            <!-- pattern="[a-zA-Z]{3,20}[ ]{0,1}[a-zA-Z]{0,20}[ ]{0,1}[a-zA-Z]{0,20}" -->
+            <input type="text" pattern="[a-zA-ZÑ-ñÁ-áÉ-éÍ-íÓ-óÚ-ú0-9]{3,20}[ ]{0,1}[a-zA-ZÑ-ñÁ-áÉ-éÍ-íÓ-óÚ-ú0-9]{0,20}[ ]{0,1}[a-zA-Z]{0,20}"
+              class="form-control" id="line2" [(ngModel)]="page.inicio.line2" name="line2" #line2="ngModel" required />
+          </div>
+          <div class="form-group col-sm-8">
+            <label for="name" class="control-label">Linea 3</label>
+            <!-- pattern="[a-zA-Z]{3,20}[ ]{0,1}[a-zA-Z]{0,20}[ ]{0,1}[a-zA-Z]{0,20}" -->
+            <input type="text" pattern="[a-zA-ZÑ-ñÁ-áÉ-éÍ-íÓ-óÚ-ú0-9]{3,20}[ ]{0,1}[a-zA-ZÑ-ñÁ-áÉ-éÍ-íÓ-óÚ-ú0-9]{0,20}[ ]{0,1}[a-zA-Z]{0,20}"
+              class="form-control" id="line3" [(ngModel)]="page.inicio.line3" name="line3" #line3="ngModel" required />
+          </div>
+          <button type="submit" class="btn btn-success">Guardar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- Servicios -->
+  <div class="content">
+    <div class="box box-primary">
+      <div class="container ">
+        <h1>Servicios</h1>
+        <form (ngSubmit)="saveService()" #inicio="ngForm" class="">
+          <div class="form-group col-sm-8">
+            <label for="name" class="control-label">Titulo</label>
+            <!-- pattern="[a-zA-Z]{3,20}[ ]{0,1}[a-zA-Z]{0,20}[ ]{0,1}[a-zA-Z]{0,20}" -->
+            <input type="text" pattern="[a-zA-ZÑ-ñÁ-áÉ-éÍ-íÓ-óÚ-ú0-9]{3,20}[ ]{0,1}[a-zA-ZÑ-ñÁ-áÉ-éÍ-íÓ-óÚ-ú0-9]{0,20}[ ]{0,1}[a-zA-Z]{0,20}"
+              class="form-control" id="tittle" [(ngModel)]="page.services.tittle" name="tittle" #tittle="ngModel" required />
+          </div>
+          <div *ngFor="let service of page.services.services">
+            <div class="form-group col-sm-8" *ngFor="let key of service | objKey">
+              <label *ngIf="key != '_id' && key != 'photo' && key != 'number'" for="name" class="control-label"> {{key}}</label>
+              <input *ngIf="key != '_id' && key != 'photo' && key != 'number'" type="text" pattern="[a-zA-ZÑ-ñÁ-áÉ-éÍ-íÓ-óÚ-ú0-9]{3,20}[ ]{0,1}[a-zA-ZÑ-ñÁ-áÉ-éÍ-íÓ-óÚ-ú0-9]{0,20}[ ]{0,1}[a-zA-Z]{0,20}"
+                class="form-control" id="{{service[key]}}" [(ngModel)]="service[key]" name="{{service[key]}}" #name="ngModel"
+                required />
+            </div>
+          </div>
+          <button type="submit" class="btn btn-success">Guardar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- Lo Nuestro -->
+  <div class="content">
+    <div class="box box-primary">
+      <div class="container ">
+        <h1>Lo Nuestro</h1>
+        <form (ngSubmit)="saveOur()" #inicio="ngForm" class="">
+          <div class="form-group col-sm-8">
+            <label for="name" class="control-label">Imagen</label>
+            <input type="file" name="myImage" accept=".jpg, .jpeg" (change)="handleFileInputOur($event.target.files)" />
+          </div>
+          <div class="form-group col-sm-8">
+            <label for="name" class="control-label">Linea 1</label>
+            <input type="text" pattern="[a-zA-ZÑ-ñÁ-áÉ-éÍ-íÓ-óÚ-ú0-9]{3,20}[ ]{0,1}[a-zA-ZÑ-ñÁ-áÉ-éÍ-íÓ-óÚ-ú0-9]{0,20}[ ]{0,1}[a-zA-Z]{0,20}"
+              class="form-control" id="line1" [(ngModel)]="page.our.line1" name="line1" #line1="ngModel" required />
+          </div>
+          <div class="form-group col-sm-8">
+            <label for="name" class="control-label">Linea 2</label>
+            <input type="text" pattern="[a-zA-ZÑ-ñÁ-áÉ-éÍ-íÓ-óÚ-ú0-9]{3,20}[ ]{0,1}[a-zA-ZÑ-ñÁ-áÉ-éÍ-íÓ-óÚ-ú0-9]{0,20}[ ]{0,1}[a-zA-Z]{0,20}"
+              class="form-control" id="line2" [(ngModel)]="page.our.line2" name="line2" #line2="ngModel" required />
+          </div>
+          <div *ngFor="let l of page.our.list">
+            <div class="form-group col-sm-8" *ngFor="let key of l | objKey">
+              <label *ngIf="key != '_id' && key != 'photo' && key != 'number'" for="name" class="control-label"> {{key}}</label>
+              <textarea *ngIf="key != '_id' && key != 'photo' && key != 'number'" type="text" pattern="[a-zA-ZÑ-ñÁ-áÉ-éÍ-íÓ-óÚ-ú0-9]{3,20}[ ]{0,1}[a-zA-ZÑ-ñÁ-áÉ-éÍ-íÓ-óÚ-ú0-9]{0,20}[ ]{0,1}[a-zA-Z]{0,20}"
+                class="form-control" id="{{l[key]}}" [(ngModel)]="l[key]" name="{{l[key]}}" #name="ngModel" required></textarea>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-success">Guardar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- Equipo -->
+  <div class="content">
+    <div class="box box-primary">
+      <div class="container ">
+        <h1>Equipo</h1>
+        <form (ngSubmit)="saveTeam()" #inicio="ngForm" class="">
+          <div class="form-group col-sm-8">
+            <label for="name" class="control-label">Titulo</label>
+            <input type="text" pattern="[a-zA-ZÑ-ñÁ-áÉ-éÍ-íÓ-óÚ-ú0-9]{3,20}[ ]{0,1}[a-zA-ZÑ-ñÁ-áÉ-éÍ-íÓ-óÚ-ú0-9]{0,20}[ ]{0,1}[a-zA-Z]{0,20}"
+              class="form-control" id="tittle" [(ngModel)]="page.team.tittle" name="tittle" #tittle="ngModel" required />
+          </div>
+          <div *ngFor="let m of page.team.member">
+            <div class="form-group col-sm-8">
+              <div class="form-group col-sm-8">
+                <label for="name" class="control-label">Imagen</label>
+                <input type="file" name="myImage" accept=".jpg, .jpeg" (change)="handleFileInputTeam($event.target.files, m._id)" />
+              </div>
+              <div *ngFor="let key of m | objKey">
+                <label *ngIf="key != '_id' && key !='photo'" for="name" class="control-label"> {{key}}</label>
+                <input *ngIf="key != '_id' && key !='photo'" type="text" pattern="[a-zA-ZÑ-ñÁ-áÉ-éÍ-íÓ-óÚ-ú0-9]{3,20}[ ]{0,1}[a-zA-ZÑ-ñÁ-áÉ-éÍ-íÓ-óÚ-ú0-9]{0,20}[ ]{0,1}[a-zA-Z]{0,20}"
+                  class="form-control" id="{{m[key]}}" [(ngModel)]="m[key]" name="{{m[key]}}" #name="ngModel" required/>
+              </div>
+              <hr>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-success">Guardar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- Galeria -->
+  <div class="content">
+    <div class="box box-primary">
+      <div class="container ">
+        <h1>Galeria</h1>
+        <form (ngSubmit)="saveGalery()" #inicio="ngForm" class="">
+          <div class="form-group col-sm-8">
+            <label for="name" class="control-label">Titulo</label>
+            <input type="text" pattern="[a-zA-ZÑ-ñÁ-áÉ-éÍ-íÓ-óÚ-ú0-9]{3,20}[ ]{0,1}[a-zA-ZÑ-ñÁ-áÉ-éÍ-íÓ-óÚ-ú0-9]{0,20}[ ]{0,1}[a-zA-Z]{0,20}"
+              class="form-control" id="tittle" [(ngModel)]="page.galery.tittle" name="tittle" #tittle="ngModel" required />
+          </div>
+          <div *ngFor="let galery of page.galery.photos">
+            <div class="form-group col-sm-8">
+              <div class="form-group col-sm-8">
+                <label for="name" class="control-label">Imagen</label>
+                <input type="file" name="myImage" accept=".jpg, .jpeg" (change)="handleFileInputGalery($event.target.files, galery._id)" />
+              </div>
+              <!-- <div *ngFor="let key of m | objKey">
+                <label *ngIf="key != '_id' && key !='photo'" for="name" class="control-label"> {{key}}</label>
+                <input *ngIf="key != '_id' && key !='photo'" type="text" pattern="[a-zA-ZÑ-ñÁ-áÉ-éÍ-íÓ-óÚ-ú0-9]{3,20}[ ]{0,1}[a-zA-ZÑ-ñÁ-áÉ-éÍ-íÓ-óÚ-ú0-9]{0,20}[ ]{0,1}[a-zA-Z]{0,20}"
+                  class="form-control" id="{{m[key]}}" [(ngModel)]="m[key]" name="{{m[key]}}" #name="ngModel" required/>
+              </div> -->
+              <hr>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-success">Guardar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- Clientes -->
+  <div class="content">
+    <div class="box box-primary">
+      <div class="container ">
+        <h1>Clientes</h1>
+        <form (ngSubmit)="saveClients()" #inicio="ngForm" class="">
+          <div class="form-group col-sm-8">
+            <label for="name" class="control-label">Titulo</label>
+            <input type="text" pattern="[a-zA-ZÑ-ñÁ-áÉ-éÍ-íÓ-óÚ-ú0-9]{3,20}[ ]{0,1}[a-zA-ZÑ-ñÁ-áÉ-éÍ-íÓ-óÚ-ú0-9]{0,20}[ ]{0,1}[a-zA-Z]{0,20}"
+              class="form-control" id="tittle" [(ngModel)]="page.clients.tittle" name="tittle" #line1="ngModel" required />
+          </div>
+          <div class="form-group col-sm-8">
+            <label for="name" class="control-label">linea</label>
+            <input type="text" pattern="[a-zA-ZÑ-ñÁ-áÉ-éÍ-íÓ-óÚ-ú0-9]{3,20}[ ]{0,1}[a-zA-ZÑ-ñÁ-áÉ-éÍ-íÓ-óÚ-ú0-9]{0,20}[ ]{0,1}[a-zA-Z]{0,20}"
+              class="form-control" id="line1" [(ngModel)]="page.clients.line" name="line1" #line1="ngModel" required />
+          </div>
+          <div *ngFor="let list of page.clients.list">
+            <div class="form-group col-sm-8">
+              <div class="form-group col-sm-8">
+                <label for="name" class="control-label">Imagen</label>
+                <input type="file" name="myImage" accept=".jpg, .jpeg" (change)="handleFileInputClients($event.target.files, list._id)" />
+              </div>
+              <hr>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-success">Guardar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,89 @@
+.module {
+    /* background: url("../../assets/fondo.jpg") no-repeat center;  */
+    overflow: hidden;
+    background-size: cover !important;
+    color: white;
+}
+.module > div {
+    left: 0;
+    width: 100%;
+    padding: 5em 0.3em 4em 3.3em;
+    text-align: left;
+    background-attachment: fixed;
+    font-size: 3em;
+}
+.module1 {
+    /* background: linear-gradient(-15deg, rgba(0,202,157, 0.6) 3%, rgba(251,255,193,0.6) 33%, transparent 65%), url("../../assets/cecap-1.jpg") no-repeat center;  */
+    overflow: hidden;
+    background-size: cover !important;
+    color: white;
+}
+.module1 > div {
+    left: 0;
+    width: 100%;
+    padding: 7em 0.3em 2em 0.3em;
+    text-align: center;
+    background-attachment: fixed;
+    font-size: 3em;
+}
+.module2 {
+    /* background: linear-gradient(-13deg, rgba(187,45,168, 0.6) 0.4%, rgba(197,66,18,0.8) 36.6%, transparent 60%),url("../../assets/cecap-2.jpg") no-repeat center;  */
+    overflow: hidden;
+    background-size: cover !important;
+    color: white;
+}
+.module2 > div {
+    left: 0;
+    width: 100%;
+    padding: 7em 0.3em 2em 0.3em;
+    text-align: center;
+    background-attachment: fixed;
+    font-size: 3em;
+}
+.module3 {
+    background: url("../../assets/somos.jpg") no-repeat center; 
+    overflow: hidden;
+    background-size: cover;
+    color: white;
+}
+.module3 > div {
+    left: 0;
+    width: 100%;
+    padding: 5em 0em 4em 0em;
+    text-align: center;
+    background-attachment: fixed;
+    font-size: 3em;
+}
+.module4 {
+    background: url("../../assets/interes.jpg") no-repeat center; 
+    overflow: hidden;
+    background-size: cover;
+    color: white;
+}
+.module4 > div {
+    left: 0;
+    width: 100%;
+    padding: 5em 0em 4em 0em;
+    text-align: center;
+    background-attachment: fixed;
+    font-size: 3em;
+}
+
+p.tittle2{
+    margin:auto; 
+    cursor: pointer;
+    text-align: center; 
+    color:#1c3844; 
+    font-size: 1.2em; 
+    font-weight: 700; 
+    font-family: Raleway;
+}
+
+.centered > .mainTittle{
+    font-size: 1em; font-weight:bold;
+}
+@media screen and (max-width: 450px) {
+    .centered > .mainTittle{
+        font-size: 0.7em;
+    }
+}

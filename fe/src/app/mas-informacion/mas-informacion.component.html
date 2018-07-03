@@ -1,0 +1,42 @@
+<div id="info" class="cecap-4 padding1" [ngStyle]="{'background': 'linear-gradient(-15deg, rgba(91,39,254, 0.6) 3%, rgba(194,101,221,0.6) 33%, transparent 65%), url('+ '../../assets/cecap-4.jpg' +') no-repeat center'}">
+  <div id="form" class='form'>
+    <h2 class='sub-title' style='padding-top: 2em;'>Quieres saber Mas?</h2>
+    <div style='padding: 2em 0em;'>
+      <form id="my-form">
+        <div class="form-group">
+          <input class="mat-input-element" name='firstname' placeholder='Nombre(s)*' required>
+        </div>
+        <div class="form-group">
+          <input class="mat-input-element" name='lastname' placeholder='Apellidos*' required>
+        </div>
+        <div class="form-group">
+          <input class="mat-input-element" name='phone' placeholder='Celular*' required>
+        </div>
+        <div class="form-group">
+          <input class="mat-input-element" name='email' placeholder='Email*' required>
+        </div>
+        <div class="form-group">
+          <select id="selectCity" name='city' class="select" onchange="selecting()" placeholder='Interes' required>
+            <option value="" disabled selected hidden>Interes *</option>
+            <option value="Cochabamba">Seguridad Industrial</option>
+            <option value="SantaCruz">Recursos Humanos</option>
+            <option value="SantaCruz">Proyectos</option>
+            <option value="SantaCruz">Plan de Negocios</option>
+            <option value="SantaCruz">Marketing y Ventas</option>
+            <option value="SantaCruz">Comercio Exterior</option>
+          </select>
+        </div>
+        <br>
+        <br>
+        <button class='btn2 primary mat-raised-button' type="submit" style='font-family: Raleway; color: white; '>
+          <span class="mat-button-wrapper">
+            <!-- <i class="material-icons">file_download</i> &nbsp;&nbsp;Descargar -->
+            <!-- <i src="../../asets/"></i> -->
+            <i class="fa fa-download"></i> &nbsp;&nbsp;Descargar
+
+          </span>
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

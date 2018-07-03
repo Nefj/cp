@@ -1,0 +1,17 @@
+<div id="init">
+    <div class='bg1'>
+        <div class='main-objectives' style="padding-top: 3em; margin-bottom: 0em !important; max-width:none;">
+            <div class='objective' style='width: 250px; height:auto;cursor: pointer;' (click)="load(of._id);" *ngFor="let of of offices">
+                <h2 [id]=of.name class='sub-title'> {{of.name}} </h2>
+                <span style="text-align:center;"> {{of.ubicacion}}
+                    <br>
+                    <strong style="font-weight: bold;">Teléfonos:</strong>
+                    <br> {{of.phones}}
+                </span>
+            </div>
+        </div>
+    </div>
+    <agm-map [latitude]="lat" [longitude]="lng" [zoom]="16" [scrollwheel]="false">
+        <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+    </agm-map>
+</div>

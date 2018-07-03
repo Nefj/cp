@@ -1,0 +1,32 @@
+<div id="init" class="facilitator" [ngStyle]="{'background': 'url('+ facilitator.background +') no-repeat center'}">
+  <div>
+    <div class="centered">
+      <span style="font-size: 1em; font-weight:bold;"> {{facilitator.line1}} </span>
+      <br>
+      <span style="font-size: 0.5em; font-weight:bold;"> {{facilitator.job}} </span>
+      <br>
+      <span style="font-size: 1em; font-weight:bold;"> {{facilitator.name}} </span>
+      <br>
+      <p style="max-width: 35em;"> {{facilitator.review}} </p>
+    </div>
+    <div>
+      <img [src]="facilitator.photo">
+    </div>
+  </div>
+</div>
+<div class='bg2 padding1'>
+  <h2 class='sub-title'> Detalles </h2>
+  <div style="text-align: left; max-width: 30em; margin: auto;">
+    <p *ngFor="let desc of facilitator.descriptions">
+      {{desc}}
+    </p>
+  </div>
+</div>
+<div class='bg1 padding1 center'>
+  <h2 class='sub-title'> Experiencia Laboral </h2>
+  <div class='main-objectives' style="padding-top: 3em; margin-bottom: 0em !important; max-width:none;">
+    <div class='objective' style='width: 270px; height:auto;' *ngFor="let enter of facilitator.enterprises">
+      <img [src]=enter />
+    </div>
+  </div>
+</div>
